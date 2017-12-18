@@ -6,13 +6,35 @@
       var distance = 200;
       var markers = [];
       var geometries = {};
+      var latitude = 43.4403171; //default
+      var longitude = -80.4620874;
+      var zoomScale = 14;
 
       function initMap() {
-        var uluru = {lat: 43.4403171, lng: -80.4620874};
-        map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 10,
-          center: uluru
-        });   
+        var p = new Promise ((resolve, reject) => {
+          navigator.geolocation.getCurrentPosition(resolve, reject);
+        })
+        p.then((position) => {
+          latitude  = position.coords.latitude;
+          longitude = position.coords.longitude;
+          var uluru = {lat: latitude, lng: longitude};
+          map = new google.maps.Map(document.getElementById('map'), {
+            zoom: zoomScale,
+            center: uluru
+          });   
+        })
+        .catch(() => {
+          error();
+          var uluru = {lat: latitude, lng: longitude};
+          map = new google.maps.Map(document.getElementById('map'), {
+            zoom: zoomScale,
+            center: uluru
+          });  
+        });
+      }
+
+      function error() {
+        console.log("Unable to retrieve your location");
       }
 
       function activateMapClick(){

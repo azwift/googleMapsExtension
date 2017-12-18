@@ -35,10 +35,6 @@
 	width: 425px;
 	height: auto;
 	background-color: moccasin;
-
-  /*  border-left-color: lightsalmon;
-	border-left-width: 10px;
-	border-left-style: solid;*/
 }
 
 .resultsContainer li{
@@ -55,9 +51,6 @@
 	overflow: auto;
 	height: 600px;
 	width: 400px;
-	/*border-top-color: lightsalmon;
-	border-top-width: 10px;
-	border-top-style: solid;*/
 
 }
 
