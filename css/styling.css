@@ -1,0 +1,166 @@
+
+#map {
+    height: 550px;
+    width: 900px;
+    float: left;
+}
+
+#toolbar{
+	float: left;
+	width: 900px;
+	height: 50px;
+	background-color: grey;
+}
+
+#toolbar button{
+	width: 150px;
+	height: 50px;
+}
+
+#mainContainer{
+	width: 1350px;
+	height: auto;
+}
+
+
+#listOfResults{
+	width: 410px;
+	height: auto;
+	display: inline-block;
+	/*margin-top: 50px;*/
+
+}
+
+.resultsContainer{
+	width: 425px;
+	height: auto;
+	background-color: moccasin;
+
+  /*  border-left-color: lightsalmon;
+	border-left-width: 10px;
+	border-left-style: solid;*/
+}
+
+.resultsContainer li{
+	margin-bottom: 5px;
+	border-color: lightsalmon;
+	border-width: 2px;
+	border-style: solid;
+	padding: 15px;
+}
+.resultsContainer ul{
+	background-color: moccasin;
+	margin: 0;
+	list-style: none;
+	overflow: auto;
+	height: 600px;
+	width: 400px;
+	/*border-top-color: lightsalmon;
+	border-top-width: 10px;
+	border-top-style: solid;*/
+
+}
+
+.resultsContainer img{
+	float: left;
+	width: 32px;
+	height: 32px;
+}
+
+.resultsContainer p{
+	font-size: 11pt;
+	margin: 0;
+	margin-left: 50px;
+	margin-bottom: 20px;
+}
+
+.buttonPan{
+	width: 16px;
+	height: 16px;
+   	outline: none;
+	background-image: url("../imgs/pan.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.buttonMark{
+	width: 16px;
+	height: 16px;
+	float: right;
+	outline: none;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.buttonMap{
+	width: 16px;
+	height: 16px;
+	float: right;
+	outline: none;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url("../imgs/externallink.png");
+}
+
+.buttonMarkOff{
+	background-image: url("../imgs/marker.png");
+
+}
+
+.buttonMarkOn{
+	background-image: url("../imgs/markerOn.png");
+}
+
+ /* The Modal (background) */
+.card {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.card-content {
+    background-color: moccasin;
+    margin: 15% auto; /* 15% from the top and centered */
+    width: 300px; /* Could be more or less, depending on screen size */
+    height: 200px;
+}
+
+/* The Close Button */
+.close {
+	padding: 6px;
+    color: #aaa;
+    float: right;
+    font-size: 12px;
+    border: 2px;
+    border-style: solid;
+    border-radius: 100%;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.card-info{
+	padding-top : 50px;
+	padding-left: 20px;
+	color: grey;
+    font-weight: bold;
+}
+.card-info:hover,
+.card-info:focus {
+    color: black;
+    text-decoration: none;
+ }
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+} 
