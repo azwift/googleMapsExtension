@@ -21,7 +21,11 @@
           map = new google.maps.Map(document.getElementById('map'), {
             zoom: zoomScale,
             center: uluru
-          });   
+          });
+          google.maps.event.addListenerOnce(map, 'idle', function(){
+            // do something only the first time the map is loaded
+            registerButtonEvents();
+          });
         })
         .catch(() => {
           error();
@@ -29,8 +33,19 @@
           map = new google.maps.Map(document.getElementById('map'), {
             zoom: zoomScale,
             center: uluru
-          });  
+          });
+          google.maps.event.addListenerOnce(map, 'idle', function(){
+            // do something only the first time the map is loaded
+            registerButtonEvents();
+          });
         });
+        
+      }
+
+      function registerButtonEvents(){
+        document.getElementById("byPoint").addEventListener("click",activateMapClick);
+        document.getElementById("byMultiPoint").addEventListener("click",activateMapDraw);
+        document.getElementById("contact").addEventListener("click",showCard);
       }
 
       function error() {
