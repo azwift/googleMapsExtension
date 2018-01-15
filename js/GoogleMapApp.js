@@ -65,7 +65,9 @@
         coords = [];
         google.maps.event.clearInstanceListeners(map);
         var resultsContainer = document.getElementsByClassName("resultsContainer")[0];
-        resultsContainer.innerText = "Click on the point of intrigue on the map";
+        var instructionsTool = document.getElementById("instructions");
+        instructionsTool.children[0].innerText = "Click on the point of intrigue on the map";
+        instructionsTool.children[0].style = "visibility: visible;";
 
         var listener = map.addListener("click",(e) => {
           google.maps.event.clearInstanceListeners(map);
@@ -74,7 +76,8 @@
                 resultsContainer.children[0].remove();
           }
 
-          resultsContainer.innerText = "Loading, please wait...";
+          instructionsTool.children[0].innerText = "Loading, please wait...";
+          //resultsContainer.innerText = "Loading, please wait...";
           var request = {
             location:  new google.maps.LatLng(e.latLng.lat(), e.latLng.lng()),
             radius: distance,
@@ -98,13 +101,16 @@
         coords = [];
         google.maps.event.clearInstanceListeners(map);
         var resultsContainer = document.getElementsByClassName("resultsContainer")[0];
-        resultsContainer.innerText = "Click on the map to draw points";
-        if(typeof(resultsContainer.children[0]) !== "undefined"){
-                resultsContainer.children[0].remove();
-        }
+        var instructionsTool = document.getElementById("instructions");
+        instructionsTool.children[0].innerText = "Click on the map to draw points";
+        instructionsTool.children[0].style = "visibility: visible;";
+        
 
         var listener = map.addListener("click",(e) => {
-          resultsContainer.innerText = "Right click to finish drawing points.";
+          if(typeof(resultsContainer.children[0]) !== "undefined"){
+                 resultsContainer.children[0].remove();
+          }
+          instructionsTool.children[0].innerText = "Right click to finish drawing points.";
           coords.push({
               lat: e.latLng.lat(),
               lng: e.latLng.lng()
@@ -126,17 +132,22 @@
 
         var listenerDouble = map.addListener("rightclick",(e) => {
           google.maps.event.clearInstanceListeners(map);
-          resultsContainer.innerText = "Loading, please wait...";
+          instructionsTool.children[0].innerText = "Loading, please wait...";
           if(coords.length === 0){
-            resultsContainer.innerText = "No results found";
+            instructionsTool.children[0].innerText = "No results found";
+            instructionsTool.children[0].style = "visibility: visible;";
+            setTimeout(() => {
+                instructionsTool.children[0].style = "visibility: hidden;";
+            }, 2000)
           }
           
           //run a search for each point
+          let tempDistance = distance + 20;
           for(var i = 0; i < coords.length; i++){
             var request = {
               location: coords[i] ,
               types: ["store", "food"],
-              radius: distance
+              radius: tempDistance
             };
             var service = new google.maps.places.PlacesService(map);
             service.textSearch(request, handleQueryResponse);
@@ -150,9 +161,11 @@
 
       function handleQueryResponse(response, status){         
           var resultsContainer = document.getElementsByClassName("resultsContainer")[0]; 
+          var instructionsTool = document.getElementById("instructions");
+          instructionsTool.children[0].style = "visibility: hidden;";
+          
           if (status == google.maps.places.PlacesServiceStatus.OK) {
             //console.log(response);
-
             var list;
             if(typeof(resultsContainer.children[0]) === "undefined"){
               list = document.createElement("ul");
@@ -196,8 +209,11 @@
             }
         }
         else if(typeof(resultsContainer.children[0]) === "undefined"){
-              var resultsContainer = document.getElementsByClassName("resultsContainer")[0];
-              resultsContainer.innerText = "No results found";
+              instructionsTool.children[0].innerText = "No results found";
+              instructionsTool.children[0].style = "visibility: visible;";
+              setTimeout(() => {
+                  instructionsTool.children[0].style = "visibility: hidden;";
+              }, 2000)
         }
       }
 
@@ -208,9 +224,6 @@
 
         var liElement = buttonEvent.target.parentElement;
         var place_id = liElement.getAttribute("data-place_id");
-        //var geometryString = liElement.getAttribute("data-geometry").split(",");
-        //var geometry = new google.maps.LatLng(geometryString[0].substr(1),
-        // geometryString[1].substr(0,geometryString[1].length-2));
         var geometry = geometries[place_id];
         var marker = new google.maps.Marker({
           map: map,

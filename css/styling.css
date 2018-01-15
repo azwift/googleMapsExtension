@@ -1,40 +1,54 @@
+body{
+	background: moccasin;
+}
 
 #map {
-    height: 550px;
-    width: 900px;
-    float: left;
+    height: 600px;
+    width: 60%;
+    margin: auto;
+    /*float: left;
+    display: inline-block;*/
 }
 
 #toolbar{
-	float: left;
-	width: 900px;
-	height: 50px;
+	/*float: left;*/
+	width: 60%;
+	height: 25px;
 	background-color: grey;
+	margin: auto;
 }
 
 #toolbar button{
-	width: 150px;
-	height: 50px;
+	width: 100px;
+	height: 22px;
+	border-radius: 10px;
+	background: whitesmoke;
+	border-color: black;
+	font-family: cursive;
+	border-width: 1px;
+
 }
 
 #mainContainer{
-	width: 1350px;
-	height: auto;
+	/*width: 1350px;
+	height: auto;*/
 }
 
 
 #listOfResults{
-	width: 410px;
-	height: auto;
-	display: inline-block;
-	/*margin-top: 50px;*/
+	position: fixed;
+	top: 8px;
+	right: 2px;
+	width: 20%;
+	background-color: whitesmoke;
 
 }
 
+#contact{
+	float:right;
+}
+
 .resultsContainer{
-	width: 425px;
-	height: auto;
-	background-color: moccasin;
 }
 
 .resultsContainer li{
@@ -45,13 +59,13 @@
 	padding: 15px;
 }
 .resultsContainer ul{
-	background-color: moccasin;
 	margin: 0;
+	padding: 0;
 	list-style: none;
 	overflow: auto;
 	height: 600px;
-	width: 400px;
-
+	width: 100%;
+	font-family: cursive;
 }
 
 .resultsContainer img{
@@ -61,7 +75,7 @@
 }
 
 .resultsContainer p{
-	font-size: 11pt;
+	font-size: 10pt;
 	margin: 0;
 	margin-left: 50px;
 	margin-bottom: 20px;
@@ -107,23 +121,23 @@
 	background-image: url("../imgs/markerOn.png");
 }
 
- /* The Modal (background) */
 .card {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.4); 
+   	font-family: cursive;
+
 }
 
-/* Modal Content/Box */
 .card-content {
-    background-color: moccasin;
+    background-color: whitesmoke;
     margin: 15% auto; /* 15% from the top and centered */
-    width: 300px; /* Could be more or less, depending on screen size */
+    width: 300px; 
     height: 200px;
     border-radius: 10px;
 }
@@ -132,13 +146,11 @@
 .close {
 	width: 30px;
 	height: 30px;
-	background: rgba(194, 180, 180, 0.8);
-	color: white;
+	color: gray;
 	display: inline-block;
 	text-align: center;
 	line-height: 100%;
 	position: relative;
-	border-radius: 1000px;
 	padding-top: 4px;
 	float: right;
 	font-size: 20px;
@@ -147,7 +159,7 @@
 .card-info{
 	padding-top : 50px;
 	padding-left: 20px;
-	color: white;
+	color: gray;
     font-weight: bold;
     border-radius: 10px;
     display: inline-block;
@@ -157,7 +169,6 @@
     padding-top: 10px;
 	padding-left: 20px;
 	font-weight: bold;
-	background: rgba(194, 180, 180, 0.8);
 	margin-left: 5px;
 
 }
@@ -172,3 +183,37 @@
     text-decoration: none;
     cursor: pointer;
 } 
+
+#toolbar .tooltiptext {
+    visibility: hidden;
+    background-color: grey;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    z-index: 2;
+}
+
+#toolbar button:hover .tooltiptext {
+    visibility: visible;
+}
+
+#instructions {
+	margin: auto;
+	width: 20%;
+}
+
+#instructions .tooltiptext {
+    visibility: hidden;
+    background-color: grey;
+    color: whitesmoke;
+    text-align: center;
+    padding: 8px;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 8px;
+    z-index: 2;
+}
