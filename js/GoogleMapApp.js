@@ -259,7 +259,7 @@
         var place_id = liElement.getAttribute("data-place_id");
         var geometry = geometries[place_id];
 
-        map.setCenter(geometry);
+        map.panTo(geometry);
       }
 
       function handleOpenNewMap(buttonEvent){
