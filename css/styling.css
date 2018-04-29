@@ -1,11 +1,30 @@
 body{
 	margin : 0;
 }
+*{
+	font-family: cursive;
+	}
+
+button:hover{
+    box-shadow: inset 0px 0px 5px 1px #ffebcd9c;
+    transition: all 0.1s ease-in-out;
+}
+button:active{
+	text-shadow: 0px 0px 10px blanchedalmond;
+	border: none;
+}
+
+button:focus{
+	  outline: none;
+}
 
 #map {
   height: calc(100% - 50px);
   flex-basis: 69.5%;
 	margin-left: 0.5%;
+}
+.expand{
+	flex-basis: 99%;
 }
 
 #mainContainer{
@@ -38,17 +57,15 @@ body{
   padding: 0;
   background: #3c1304;
   color: blanchedalmond;
+  transition: all 0.1s ease-in-out;
 }
 #toolbar > button:hover{
-	  /*text-shadow: 0px 9px 20px blanchedalmond;*/
-    box-shadow: inset 0px 0px 5px 1px #ffebcd9c;
+
 }
 #toolbar > button:focus{
-	  outline: none;
 }
 #toolbar > button:active{
-	text-shadow: 0px 0px 10px blanchedalmond;
-	border: none;
+
 }
 
 #toolbar .tooltiptext {
@@ -69,9 +86,23 @@ body{
     visibility: visible;
 }
 
+#minimize{
+	  position: absolute;
+    transform: translate(0,-100%);
+    color: whitesmoke;
+    background: #3c1304;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    font-size: 22px;
+    border: 0.5px solid whitesmoke;
+}
+#minimize:hover{
+	
+}
 #listOfResults{
 	flex-basis: 29%;
-	background-color: #f5f5f524;
+	background-color: #f5f5f517;
 	margin-left: 0.5%;
 }
 
@@ -86,10 +117,17 @@ body{
 
 .resultsContainer li{
 	margin-bottom: 5px;
-	border-color: lightsalmon;
-	border-width: 2px;
+	border-color: whitesmoke;
+	border-width: 1px;
+	border-radius: 2px;
 	border-style: solid;
-	padding: 15px;
+	padding: 4%;
+	transition: all 0.1s ease-in-out;
+}
+.resultsContainer  li:hover{
+	background: #3c1304;
+	text-shadow: 0px 0px 100px whitesmoke;
+	transition: all 0.1s ease-in-out;
 }
 .resultsContainer > ul{
 	margin: 0;
@@ -117,43 +155,60 @@ body{
 }
 
 .buttonPan{
-	width: 16px;
-	height: 16px;
-   	outline: none;
-	background-image: url("../imgs/pan.png");
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
+	width: 22%;
+	height: 22px;
+  outline: none;
+  border-radius: 2px;
+	border: 1px solid blanchedalmond;
+	background: #3c1304;
+  color: blanchedalmond;
+  margin: 0 4% 0 0;
+  font-size: 10px;
+  transition: all 0.1s ease-in-out;
+}
+button.buttonPan:hover{
+}
+button.buttonPan:active{
+
 }
 
 .buttonMark{
-	width: 16px;
-	height: 16px;
-	float: right;
+	width: 22%;
+	height: 22px;
 	outline: none;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
+	border-radius: 2px;
+	border: 1px solid blanchedalmond;
+	background: #3c1304;
+  color: blanchedalmond;
+  margin: 0 4% 0 0;
+  font-size: 10px;
+  transition: all 0.1s ease-in-out;
 }
+button.buttonMark:hover{
+}
+button.buttonMark:active{
+
+}
+.buttonMarkOn{
+	color : red;
+	border-color: red;
+}
+
 
 .buttonMap{
-	width: 16px;
-	height: 16px;
-	float: right;
+	width: 22%;
+	height: 22px;
 	outline: none;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-image: url("../imgs/externallink.png");
+	border-radius: 2px;
+	border: 1px solid blanchedalmond;
+	background: #3c1304;
+  color: blanchedalmond;
+  font-size: 10px;
+  transition: all 0.1s ease-in-out;
 }
-
-.buttonMarkOff{
-	background-image: url("../imgs/marker.png");
-
+button.buttonMap:hover{
 }
-
-.buttonMarkOn{
-	background-image: url("../imgs/markerOn.png");
+button.buttonMap:active{
 }
 
 .card {
@@ -239,7 +294,7 @@ body{
 
 #options{
 	display: none;
-	
+
 }
 
 

@@ -45,7 +45,9 @@
       function registerButtonEvents(){
         document.getElementById("byPoint").addEventListener("click",activateMapClick);
         document.getElementById("byMultiPoint").addEventListener("click",activateMapDraw);
-        document.getElementById("contact").addEventListener("click",showCard);
+        let contact = document.getElementById("contact");
+        if(contact)
+          contact.addEventListener("click",showCard);
       }
 
       function error() {
@@ -190,8 +192,11 @@
                 //create a list item
                 markButton.classList.add("buttonMark");
                 markButton.classList.add("buttonMarkOff");
+                markButton.innerHTML = "Pin";
                 panButton.classList.add("buttonPan");
+                panButton.innerHTML = "Pan"
                 mapButton.classList.add("buttonMap");
+                mapButton.innerHTML = "Google";
                 markButton.addEventListener("click",handleMarkerAction);
                 panButton.addEventListener("click",handlePanAction);
                 mapButton.addEventListener("click",handleOpenNewMap);
