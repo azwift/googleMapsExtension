@@ -24,7 +24,7 @@ button:focus{
 	margin-left: 0.5%;
 }
 .expand{
-	flex-basis: 99%;
+	flex-basis: 99% !important;
 }
 
 #mainContainer{
@@ -91,19 +91,50 @@ button:focus{
     transform: translate(0,-100%);
     color: whitesmoke;
     background: #3c1304;
-    width: 32px;
-    height: 32px;
+    width: 21px;
+    height: 21px;
     text-align: center;
-    font-size: 22px;
-    border: 0.5px solid whitesmoke;
+    font-size: 14px;
+    border: 1px solid #f5f5f517;
+    cursor: pointer;
 }
 #minimize:hover{
-	
+	transition: all 0.1s ease-in-out;
+	border: 1px solid #f5f5f55c;
+}
+#maximize{
+	position: absolute;
+	right: 0;
+  transform: translate(0,-100%);
+  color: whitesmoke;
+  background: #3c1304;
+  width: 21px;
+  height: 21px;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #f5f5f517;
+  cursor: pointer;
+  visibility: hidden;
+}
+#maximize:hover{
+	transition: all 0.1s ease-in-out;
+	border: 1px solid #f5f5f55c;
 }
 #listOfResults{
 	flex-basis: 29%;
 	background-color: #f5f5f517;
 	margin-left: 0.5%;
+	transition: all 0.2s ease-in-out;
+}
+#listOfResults.resultsMin{
+	flex-basis: 0;
+}
+#listOfResults.resultsMin > #minimize{
+	display: none;
+}
+#listOfResults.resultsMin > #maximize{
+	visibility: visible;
+	margin-right: 0.5%;
 }
 
 #contact{

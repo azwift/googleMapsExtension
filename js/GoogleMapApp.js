@@ -286,3 +286,21 @@
           modal.style.display = "none";
         }
       }
+      function toggleResults(){
+        let listOfResults = document.getElementById("listOfResults");
+        let mapContainer = document.getElementById("map");
+        if(!listOfResults){
+          console.error("List of results not accessible");
+          return;
+        }
+        if(listOfResults.classList.contains("resultsMin")){
+          listOfResults.classList.remove("resultsMin");
+          if(mapContainer)
+            mapContainer.classList.remove("expand");
+        }
+        else{
+          listOfResults.classList.add("resultsMin");
+          if(mapContainer)
+            mapContainer.classList.add("expand");
+        }
+      }
