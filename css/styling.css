@@ -22,9 +22,11 @@ button:focus{
   height: calc(100% - 50px);
   flex-basis: 69.5%;
 	margin-left: 0.5%;
+	transition: all 0.2s ease-in-out;
 }
 .expand{
 	flex-basis: 99% !important;
+	transition: all 0.2s ease-in-out;
 }
 
 #mainContainer{
