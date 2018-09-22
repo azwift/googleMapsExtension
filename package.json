@@ -1,0 +1,26 @@
+{
+  "name": "gmextension",
+  "version": "1.0.0",
+  "description": "an example website using the google maps api",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "express" : "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azwift/googleMapsExtension.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azwift/googleMapsExtension/issues"
+  },
+  "homepage": "https://github.com/azwift/googleMapsExtension#readme"
+}
