@@ -1,10 +1,10 @@
 # googleMapsExtension
 
-https://azwift.github.io/googleMapsExtension/
-an example website using the google maps api  
+https://azwift.github.io/googleMapsExtension/<br>
+an example website using the google maps api<br>
 
 # local evironment setup
 
-clone repository 
-npm install
-npm start
+<b>clone repository<br>
+npm install<br>
+npm start</b>
